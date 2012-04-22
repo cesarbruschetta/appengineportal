@@ -1,0 +1,21 @@
+<ul>
+	<li>
+		<div id="search" >
+			<form method="get" action="#">
+				<div>
+					<input type="text" name="text" id="search-text" value="" />
+					<input type="submit" id="search-submit" value="OK" />
+				</div>
+			</form>
+		</div>
+		<div style="clear: both;">&nbsp;</div>
+	</li>
+	<li>
+		<h2>Últimas Notícias</h2>
+		<ul>
+			{% for new in somevar|get_RSS %}
+				<li><a href="{{ new.url }}" target="_blank">{{ new.title }}</a></li>
+			{% endfor %}
+		</ul>
+	</li>
+</ul>

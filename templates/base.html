@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title> App Enginer | {% block title %}{% endblock %}</title>
+		
+		<!-- Links das Fontes do Site -->
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Marvel' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Marvel|Delius+Unicase' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+		
+		<link href="/media/style.css" rel="stylesheet" type="text/css" media="screen" />
+		{% block external %}{% endblock %}
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="wrapper2">
+				<div id="header" class="container">
+					<div id="logo">
+						<h1><a href="/">Captive <span>Green</span></a></h1>
+					</div>
+					<div id="menu">
+						{% include "menu.html" %}
+					</div>
+				</div>
+				
+				<!-- end #header -->
+				<div id="page">
+					<div id="content">
+						<!-- Conteudo do Site -->
+          				<h1>{% block head %}{% endblock %}</h1>
+						{% block bodycontent %}
+							Replace this
+						{% endblock %}
+						<div style="clear: both;">&nbsp;</div>
+					</div>
+					<!-- end #content -->
+					<div id="sidebar">
+						{% include "coluna_direita.html" %}
+					</div>
+					<!-- end #sidebar -->
+					<div style="clear: both;">&nbsp;</div>
+				</div>
+				<!-- end #page -->
+				<div id="footer">
+					 <p>R. Coimbra, 567 - Vila Pires | Santo Andre - SP | Telefones  (11) 4453-5295 |	Celular  (11) 9163-1305</p>
+				</div>
+			</div>
+		</div>
+		<p id="sobre">&copy; 2012 <a href="/media/sobre.html" target="popupwindow" onclick='window.open("/media/sobre.html", "popupwindow", "scrollbars=yes,width=590,height=360");return true'>Cesar Augusto</a> - Todos os direitos reservados</p>
+		<!-- end #footer -->
+		{% include "analytics.html" %}
+	</body>
+</html>
