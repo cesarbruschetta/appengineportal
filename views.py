@@ -2,7 +2,8 @@
 from google.appengine.ext import webapp
 
 from Base import doRender
-
+from models.pagina import Pagina
+from debug import dbg 
 
 class MainHandler(webapp.RequestHandler):
     def get(self):
@@ -12,7 +13,7 @@ class MainHandler(webapp.RequestHandler):
 
 class PaginaHandler(webapp.RequestHandler):
     def get(self, urlPrefix, url):
+        #dbg()
         D={}
-        D['parametro'] = urlPrefix
-        D['teste'] = url
+        D['pagina'] = Pagina.getItem(url.replace('/',''))
         doRender(self,'pagina.html',D)

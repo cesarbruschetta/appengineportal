@@ -4,6 +4,7 @@ import os
 import sys
 
 current_path = os.path.abspath(os.path.dirname(__file__))
+reload(sys); sys.setdefaultencoding('utf-8')
 
 # Add lib as primary libraries directory, with fallback to lib/dist
 # and optionally to lib/dist.zip, loaded using zipimport.

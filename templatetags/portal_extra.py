@@ -3,7 +3,7 @@
 from google.appengine.ext import webapp
 
 from RssFeed import RSSFeed
-
+from models.pagina import Pagina 
 
 register = webapp.template.create_template_register()
 
@@ -19,7 +19,12 @@ def get_RSS(self):
     return itens.items[:5]
 
 
+def get_Menu(self):
+    return Pagina.getAll()
+
+
 #Registro de tag filter em template
 register.filter(get_RSS)
+register.filter(get_Menu)
 
 
