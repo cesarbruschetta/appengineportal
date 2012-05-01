@@ -1,4 +1,4 @@
-application: app-enginer-portal
+application: portal-in-gae
 version: 1
 runtime: python
 api_version: 1
@@ -19,7 +19,6 @@ handlers:
 - url: /robots\.txt
   static_files: static/robots.txt
   upload: static/robots.txt
-
     
 - url: .*
   script: main.py
