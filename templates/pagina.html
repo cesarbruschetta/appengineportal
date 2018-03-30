@@ -3,5 +3,7 @@
 {% block bodycontent %}
 	<h2>{{ pagina.title }}</h2>
 	<br />
-    {{ pagina.content }}
+	{% autoescape off %}
+        {{ pagina.content }}
+    {% endautoescape %}
 {% endblock %}

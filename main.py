@@ -7,7 +7,6 @@ from google.appengine.ext import webapp
 
 from google.appengine.ext.webapp.util import run_wsgi_app
 
-import appengine_admin
 from config import *
 from models import *
 
@@ -20,8 +19,7 @@ from views import MainHandler, PaginaHandler
 
 
 def main():
-    URL = [(r'^(/admin)(.*)$', appengine_admin.Admin),  # Admin pages 
-           ('/', MainHandler),
+    URL = [('/', MainHandler),
            (r'^(/pg)(.*)$', PaginaHandler),
            ]
     
